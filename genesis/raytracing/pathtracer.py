@@ -7,13 +7,6 @@ import torch
 mi.set_variant('cuda_ad_rgb')
 torch.set_default_device('cuda')
 
-@dr.wrap_ad(source='drjit', target='torch')
-def dr_to_torch(tensor):
-    return tensor
-
-@dr.wrap_ad(source='torch', target='drjit')
-def torch_to_dr(tensor):
-    return tensor
 
 class RayTracer:
     def __init__(self) -> None:
@@ -90,31 +83,10 @@ class RayTracer:
         return PIR, pointclouds
     
 
-    def trace_torch(self):
-        ray = self.gen_rays()
-        si = self.scene.ray_intersect(ray)                   # ray intersection
-        intensity = mi.render(self.scene,spp=32)
-        t= si.t
-        t[t>9999]=0
-        distance = torch_to_dr(mi.TensorXf(t,shape =(self.PIR_resolution,self.PIR_resolution)))
-        intensity = torch_to_dr(intensity)[:,:,0]
-        velocity = torch.zeros((self.PIR_resolution,self.PIR_resolution))  # the velocity is zero for this static frame, 
-                                                                        # but will be calculated later by calculating the difference between two frames
-        # print("distance",distance.shape)
-        # print("intensity",intensity.shape)
-        # print("velocity",velocity.shape)
-        
-        PIR = torch.stack([intensity,distance,velocity],axis=2)
-        p = dr.ravel(si.p)
-       
-        p = mi.TensorXf(p,shape = (self.PIR_resolution,self.PIR_resolution,3))
-        pointclouds = torch_to_dr(p)        # We save the points here for faster calculation, it can be calculated from the PIR's distance + sensor's intrinsic metrix
-        return PIR, pointclouds
-
 
 def get_deafult_scene(res = 512):
     integrator = mi.load_dict({
-        'type': 'path',
+        'type': 'direct',
         })
 
     sensor = mi.load_dict({

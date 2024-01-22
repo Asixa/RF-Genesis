@@ -7,7 +7,7 @@ tqdm
 termcolor
 mitsuba
 smplpytorch
-diffusers==0.10.2
+diffusers
 transformers
 scipy
 ftfy

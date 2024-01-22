@@ -5,13 +5,8 @@ import torch
 from smplpytorch.pytorch.smpl_layer import SMPL_Layer
 import numpy as np
 torch.set_default_device('cuda')
-@dr.wrap_ad(source='drjit', target='torch')
-def dr_to_torch(tensor):
-    return tensor
 
-@dr.wrap_ad(source='torch', target='drjit')
-def torch_to_dr(tensor):
-    return tensor
+
 
 def get_smpl_layer():
     return SMPL_Layer(center_idx=0,gender='male',model_root='../models/smpl_models').cuda()
@@ -40,12 +35,12 @@ def call_smpl_layer(pose_params, shape_params,body, need_face = False,transform 
         vertices = apply_translation(vertices, transform)
 
     # convert torch to drjit
-    vertices_mi=dr_to_torch(vertices)
+    vertices_mi=mi.TensorXf(vertices.cpu().numpy())
     
     if not need_face:
         return vertices_mi
     if need_face:
-        faces_mi=dr_to_torch(body.th_faces)
+        faces_mi=mi.TensorXf(body.th_faces.cpu().numpy())
         return vertices_mi, faces_mi
 
 

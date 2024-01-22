@@ -12,8 +12,12 @@ def get_pip(pretrained , lora ):
     pipe.scheduler = EulerAncestralDiscreteScheduler.from_config(pipe.scheduler.config)
     pipe.to('cuda')
     torch.set_default_device('cuda')
-    pipe.load_lora_weights(lora)
-    pipe.fuse_lora(lora_scale=0.9)
+
+    # TODO: RFLoRA is temporarily disabled because we are still tuning the parameters
+    # Will update soon.
+
+    # pipe.load_lora_weights(lora)
+    # pipe.fuse_lora(lora_scale=0.9)
     return pipe
 
 def gen_image(prompt, pretrained_model, lora, negative_prompt="", steps = 1000):
