@@ -10,9 +10,9 @@ Diffusion Models*](https://rfgen.xingyuchen.me/).
 UC San Diego.
 
 In SenSys 2023
-
+![teaser](https://rfgen.xingyuchen.me/RFGen/pull.png)
 ## News
-📢 **22/Jan/24** - Inital Release of RF Genesis!
+📢 **22/Jan/24** - Initial Release of RF Genesis!
 
 ## To-Do List
 - [ ] Release the RFLoRA pretrained model.
@@ -20,10 +20,18 @@ In SenSys 2023
 
 
 ## Quick Start
+This code was tested on `Ubuntu 20.04.5 LTS` and requires:
+
+* Python 3.10
+* conda3 or miniconda3
+* CUDA capable GPU (one is enough)
+
+
+Clone the repository
 ```
 git clone git@github.com:Asixa/RF-Genesis.git
 ```
-Download the dependencies [*RFGen_Dependencies.zip*](https://rfgen.xingyuchen.me/) and drop it to the root folder 
+Download the dependencies [*RFGen_Dependencies.zip*](https://ucsdcloud-my.sharepoint.com/:u:/g/personal/xic063_ucsd_edu/EWUa1yi8V-RKrs2mYwWgom8B5ezkctME6_W_nkSc10iDLg?e=tbVhfX) and drop it to the root folder 
 **without unzipping it**.
 
 Create a conda environment.
@@ -41,6 +49,8 @@ Run a simple example.
 python run.py -o "a person walking back and forth" -e "a living room" -n "hello_rfgen"
 ```
 
+
+
 ## Citation
 ```
 @inproceedings{chen2023rfgenesis,
@@ -55,3 +65,8 @@ python run.py -o "a person walking back and forth" -e "a living room" -n "hello_
       doi = {10.1145/3625687.3625798}
   }
 ```
+
+
+## License
+This code is distributed under an [MIT LICENSE](LICENSE).
+Note that our code depends on other libraries, including CLIP, SMPL and uses datasets that each have their own respective licenses that must also be followed.
