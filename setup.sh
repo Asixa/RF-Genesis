@@ -8,7 +8,7 @@ rm -rf ext/HumanML3D
 
 unzip RFGen_Dependencies.zip
 unzip RFGen_Dependencies/glove.zip -d ./ext/mdm/
-unzip RFGen_Dependencies/smpl.zip -d ./ext/mdm/body_models/
+unzip RFGen_Dependencies/smpl.zip -d ./ext/mdm/body_models/pyt
 unzip RFGen_Dependencies/t2m.zip -d ./ext/mdm/
 unzip RFGen_Dependencies/kit.zip -d ./ext/mdm/
 

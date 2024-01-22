@@ -4,6 +4,7 @@ from mitsuba.scalar_rgb import Transform4f as T
 import numpy as np
 from . import smpl
 import torch
+from tqdm import tqdm
 mi.set_variant('cuda_ad_rgb')
 torch.set_default_device('cuda')
 
@@ -145,3 +146,26 @@ def get_deafult_scene(res = 512):
 
         }
     return default_scene
+
+
+
+def trace(motion_filename):
+    smpl_data = np.load(motion_filename, allow_pickle=True)
+    root_translation = smpl_data['root_translation']
+    max_distance = np.max(root_translation[:,2])+2
+    body_offset = np.array([0,1,3])
+    sensor_origin = np.array([0,0,0])
+    sensor_target = np.array([0,0,-5])
+
+    raytracer = RayTracer()
+    PIRs = []
+    pointclouds = []
+    total_motion_frames = len(root_translation)
+
+    for frame_idx in tqdm(range(0, total_motion_frames), desc="Rendering Body PIRs"):
+        raytracer.update_pose(smpl_data['pose'][frame_idx], smpl_data['shape'][0], np.array(root_translation[frame_idx]) -  body_offset)
+        PIR, pc = raytracer.trace()
+        PIRs.append(torch.from_numpy(PIR).cuda())
+        pointclouds.append(torch.from_numpy(pc).cuda())
+
+    return PIRs, pointclouds

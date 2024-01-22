@@ -1,8 +1,8 @@
 import argparse
 from termcolor import colored
 import time
-from genesis.raytracing import trace
-from genesis.raytracing import signal_gen
+from genesis.raytracing import pathtracer
+from genesis.raytracing import signal_generator
 
 from genesis.environment_diffusion import environemnt_diff
 from genesis.object_diffusion import object_diff
@@ -42,19 +42,19 @@ def main():
         print(colored('[RFGen] Step 1/4: Generating the human body motion: ', 'green'))
         object_diff.generate(obj_prompt, output_dir)
     else:
-        print(colored('[RFGen] Step 1/4: Already done, existing body motion file, skiping this step ', 'green'))
+        print(colored('[RFGen] Step 1/4: Already done, existing body motion file, skiping this step.', 'green'))
 
     
     os.chdir("genesis/")
     print(colored('[RFGen] Step 2/4: Rendering the human body PIRs: ', 'green'))
-    body_pir, body_aux = trace.trace(os.path.join("../",output_dir, 'obj_diff.npz'))
+    body_pir, body_aux = pathtracer.trace(os.path.join("../",output_dir, 'obj_diff.npz'))
     os.chdir("..")
     
     
     # print(colored('[RFGen] Step 3/4: Generating the environmental PIRs: ', 'green'))
     print(colored('[RFGen] Step 3/4: [Jan 2024] RFLoRA and Environment Diffusion is Temporarily Disabled.', 'red'))
-    print(colored('                  We will update tuned RFLoRA soon', 'red'))
-    print(colored('                  RFGen will continue without RFLoRA', 'green'))
+    print(colored('                  We will update tuned RFLoRA soon.', 'red'))
+    print(colored('                  RFGen will continue without RFLoRA.', 'green'))
     env_pir = environemnt_diff.gen_image(
         env_prompt, 
         pretrained_model= "darkstorm2150/Protogen_x5.3_Official_Release",
@@ -62,16 +62,16 @@ def main():
     
   
 
-    print(colored('[RFGen] Step 4/4: Generating the radar signal ', 'green'))
-    radar_frames = signal_gen.generate_signal_frames(body_pir, body_aux, env_pir, radar_config="models/TI1843_config.json")
+    print(colored('[RFGen] Step 4/4: Generating the radar signal.', 'green'))
+    radar_frames = signal_generator.generate_signal_frames(body_pir, body_aux, env_pir, radar_config="models/TI1843_config.json")
 
-    print(colored('[RFGen] Saving the radar signal with shape {}'.format(radar_frames.shape), 'green'))
+    print(colored('[RFGen] Saving the radar bin file. Shape {}'.format(radar_frames.shape), 'green'))
     np.save(os.path.join(output_dir, 'radar_frames.npy'), radar_frames)
 
     print(colored('----------------------------------------', 'green')) 
     print(colored('[RFGen] Hooray! you are all set! ', 'green')) 
     print(colored('----------------------------------------', 'green')) 
-    print(colored('Please ignore the Segmentation Fault if there is any ', 'green'))
+    print(colored('        Please ignore the segmentation faults if there are any.', 'green'))
 
     exit(0)
 if __name__ == '__main__':

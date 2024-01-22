@@ -1,6 +1,8 @@
 ext/ 
 output/
 models/
+
+RFGen_Dependencies.zip 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

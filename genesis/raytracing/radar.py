@@ -2,7 +2,11 @@ import torch
 import matplotlib.pyplot as plt
 import numpy as np
 import json
-from .sigproc import RF_path_loss_torch, db_to_linear, FSPL
+
+def FSPL(distance, frequency=77e9):
+    wavelength = 3e8 / frequency
+    return (wavelength / (4 * 3.14159265358979323846 * distance)) ** 2
+
 def dechirp(x,xref):
     return xref * torch.conj(x)
 
