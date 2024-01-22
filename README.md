@@ -5,8 +5,8 @@ The offical implementation of [  *RF Genesis: Zero-Shot Generalization of mmWave
 through Simulation-Based Data Synthesis and Generative
 Diffusion Models*](https://rfgen.xingyuchen.me/).
 
-[Xingyu Chen](https://people.eecs.berkeley.edu/~bmild/),
-[Xinyu Zhang](https://people.eecs.berkeley.edu/~bmild/),
+[Xingyu Chen](https://xingyuchen.me/),
+[Xinyu Zhang](http://xyzhang.ucsd.edu/index.html),
 UC San Diego.
 
 In SenSys 2023
