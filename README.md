@@ -17,6 +17,7 @@ In SenSys 2023
 ## To-Do List
 - [ ] Release the RFLoRA pretrained model.
 - [ ] Release the RFLoRA training dataset and procedures.
+- [ ] More documentations.
 
 
 ## Quick Start
