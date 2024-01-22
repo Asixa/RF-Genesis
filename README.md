@@ -71,4 +71,4 @@ python run.py -o "a person walking back and forth" -e "a living room" -n "hello_
 
 ## License
 This code is distributed under an [MIT LICENSE](LICENSE).
-Note that our code depends on other libraries, including CLIP, SMPL and uses datasets that each have their own respective licenses that must also be followed.
+Note that our code depends on other libraries, including [CLIP](https://github.com/openai/CLIP), [SMPL](https://smpl.is.tue.mpg.de/), [MDM](https://guytevet.github.io/mdm-page/) and uses datasets that each have their own respective licenses that must also be followed.
