@@ -1,0 +1,57 @@
+{
+    "c0": 299792458,
+    "num_tx": 3,
+    "num_rx": 4,
+    "fc": 77000000000.0,
+    "slope": 60.012,
+    "adc_samples": 256,
+    "adc_start_time": 6,
+    "sample_rate": 4400,
+    "idle_time": 7,
+    "ramp_end_time": 65,
+    "chirp_per_frame": 128,
+    "frame_per_second": 10,
+    "num_doppler_bins": 128,
+    "num_range_bins": 256,
+    "num_angle_bins": 64,
+    "power": 15,
+    "tx_loc": [
+        [
+            0.0,
+            0.0,
+            0.0
+        ],
+        [
+            4,
+            0.0,
+            0.0
+        ],
+        [
+            2,
+            1,
+            0.0
+        ]
+    ],
+    "rx_loc": [
+        [
+            -6,
+            0.0,
+            0.0
+        ],
+        [
+            -5,
+            0.0,
+            0.0
+        ],
+        [
+            -4,
+            0.0,
+            0.0
+        ],
+        [
+            -3,
+            0.0,
+            0.0
+        ]
+    ]
+}
