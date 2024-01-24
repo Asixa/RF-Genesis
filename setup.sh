@@ -6,6 +6,8 @@ unzip ./ext/HumanML3D/HumanML3D/texts.zip -d ./ext/HumanML3D/HumanML3D/
 cp -r ext/HumanML3D/HumanML3D ext/mdm/dataset/HumanML3D
 rm -rf ext/HumanML3D
 
+wget https://github.com/Asixa/RF-Genesis/releases/download/v1.0.0/RFGen_Dependencies.zip
+
 unzip RFGen_Dependencies.zip
 unzip RFGen_Dependencies/glove.zip -d ./ext/mdm/
 unzip RFGen_Dependencies/smpl.zip -d ./ext/mdm/body_models/pyt
