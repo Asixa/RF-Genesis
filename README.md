@@ -30,7 +30,7 @@ This code was tested on `Ubuntu 20.04.5 LTS` and requires:
 
 Clone the repository
 ```
-git clone git@github.com:Asixa/RF-Genesis.git
+git clone https://github.com/Asixa/RF-Genesis.git
 cd RF-Genesis
 ```
 
