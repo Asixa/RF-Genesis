@@ -100,7 +100,7 @@ class Radar:
         for chirp_id in range(self.chirp_per_frame): 
             
             # it is inefficient to calculate the location for every sample point, so we do that for every chirp
-            # this is a tradeoff between memory and computation
+            # this is a tradeoff between accuracy and computation
             
             time_in_frame = chirp_id / self.chirp_per_frame  / self.frame_per_second                 
             intensity,loc = interpolator(t0+time_in_frame) # loc is a set of reflection points (N,3)
