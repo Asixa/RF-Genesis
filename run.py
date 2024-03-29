@@ -6,6 +6,7 @@ from genesis.raytracing import signal_generator
 
 from genesis.environment_diffusion import environemnt_diff
 from genesis.object_diffusion import object_diff
+from genesis.visualize import visualize
 
 
 import torch
@@ -67,6 +68,14 @@ def main():
 
     print(colored('[RFGen] Saving the radar bin file. Shape {}'.format(radar_frames.shape), 'green'))
     np.save(os.path.join(output_dir, 'radar_frames.npy'), radar_frames)
+
+    print(colored('[RFGen] Rendering the visualization.' 'green'))
+    torch.set_default_device('cpu') # To avoid OOM, we use cpu for visualization
+    visualize.save_video(
+        "models/TI1843_config.json", 
+        os.path.join(output_dir, 'radar_frames.npy'), 
+        os.path.join(output_dir, 'obj_diff.npz'), 
+        os.path.join(output_dir, 'output.mp4'))
 
     print(colored('----------------------------------------', 'green')) 
     print(colored('[RFGen] Hooray! you are all set! ', 'green')) 

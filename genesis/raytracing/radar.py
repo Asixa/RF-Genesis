@@ -51,7 +51,7 @@ class Radar:
         # self.rx_loc = np.array([[-6*spacing,0,0],[-5*spacing,0,0],[-4*spacing,0,0],[-3*spacing,0,0]])
 
         self.range_resolution = (3e8 * self.sample_rate * 1e3) / (2 * self.slope * 1e12 * self.adc_samples)
-        self.max_range = (300 * self.sample_rate) / (2 * self.fc * 1e3)
+        self.max_range = (300 * self.sample_rate) / (2 * self.slope * 1e3)
         self.doppler_resolution = 3e8 / (2 * self.fc * 1e9 * (self.idle_time + self.ramp_end_time) * 1e-6 * self.num_doppler_bins * self.num_tx)
         self.max_doppler = 3e8 / (4 * self.fc * 1e9 * (self.idle_time + self.ramp_end_time) * 1e-6 * self.num_tx)
        

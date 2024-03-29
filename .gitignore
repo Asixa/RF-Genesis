@@ -2,6 +2,9 @@ ext/
 output/
 models/
 
+*.ipynb
+*.mp4
+
 RFGen_Dependencies.zip 
 # Byte-compiled / optimized / DLL files
 __pycache__/
