@@ -13,6 +13,7 @@ In SenSys 2023
 ![teaser](https://rfgen.xingyuchen.me/RFGen/pull.png)
 ## News
 📢 **22/Jan/24** - Initial Release of RF Genesis!
+
 📢 **29/March/24** - Added the coude pointcloud processing and visualization.
 
 ## To-Do List
