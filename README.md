@@ -14,7 +14,7 @@ In SenSys 2023
 ## News
 📢 **22/Jan/24** - Initial Release of RF Genesis!
 
-📢 **29/March/24** - Added the coude pointcloud processing and visualization.
+📢 **29/March/24** - Added the code for point-cloud processing and visualization.
 
 ## To-Do List
 - [ ] Release the RFLoRA pretrained model.
