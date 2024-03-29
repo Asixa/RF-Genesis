@@ -11,7 +11,7 @@ import cv2
 from tqdm import tqdm
 
 from genesis.raytracing.radar import Radar 
-from genesis.visualize.pointcloud import PointCloudProcessCFG, frame2pointcloud,rangeFFT,dopplerFFT,process_pc
+from genesis.visualization.pointcloud import PointCloudProcessCFG, frame2pointcloud,rangeFFT,dopplerFFT,process_pc
 from smplpytorch.pytorch.smpl_layer import SMPL_Layer
 
 

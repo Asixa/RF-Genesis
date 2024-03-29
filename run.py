@@ -6,7 +6,7 @@ from genesis.raytracing import signal_generator
 
 from genesis.environment_diffusion import environemnt_diff
 from genesis.object_diffusion import object_diff
-from genesis.visualize import visualize
+from genesis.visualization import visualize
 
 
 import torch
