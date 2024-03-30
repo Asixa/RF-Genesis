@@ -55,7 +55,6 @@ python run.py -o "a person walking back and forth" -e "a living room" -n "hello_
 
 Rendered SMPL animation and radar point clouds. 
 
-**Credits**: The point cloud algorithm is borrowed  from [mmMesh](https://github.com/HavocFiXer/mmMesh).
 
 ## Radar Hardware
 The current simulation is based on the model of [**Texas Instruments AWR 1843**](https://www.ti.com/product/AWR1843#all) radar, with 3TX 4RX MIMO setup. 
