@@ -56,10 +56,10 @@ def main():
     print(colored('[RFGen] Step 3/4: [Jan 2024] RFLoRA and Environment Diffusion is Temporarily Disabled.', 'red'))
     print(colored('                  We will update tuned RFLoRA soon.', 'red'))
     print(colored('                  RFGen will continue without RFLoRA.', 'green'))
-    env_pir = environemnt_diff.gen_image(
-        env_prompt, 
-        pretrained_model= "darkstorm2150/Protogen_x5.3_Official_Release",
-        lora="./models/RFLoRA.safetensors")
+    # env_pir = environemnt_diff.gen_image(
+    #    env_prompt, 
+    #    pretrained_model= "darkstorm2150/Protogen_x5.3_Official_Release",
+    #    lora="./models/RFLoRA.safetensors")
     
   
 
