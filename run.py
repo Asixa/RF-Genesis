@@ -64,7 +64,7 @@ def main():
   
 
     print(colored('[RFGen] Step 4/4: Generating the radar signal.', 'green'))
-    radar_frames = signal_generator.generate_signal_frames(body_pir, body_aux, env_pir, radar_config="models/TI1843_config.json")
+    radar_frames = signal_generator.generate_signal_frames(body_pir, body_aux, None, radar_config="models/TI1843_config.json")
 
     print(colored('[RFGen] Saving the radar bin file. Shape {}'.format(radar_frames.shape), 'green'))
     np.save(os.path.join(output_dir, 'radar_frames.npy'), radar_frames)

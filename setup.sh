@@ -2,6 +2,13 @@ mkdir ext
 git clone https://github.com/GuyTevet/motion-diffusion-model.git ext/mdm
 git clone https://github.com/EricGuo5513/HumanML3D.git ext/HumanML3D
 
+cd ext/mdm
+git git checkout af061ca7c7077fb144c0094a5a72932b967647b6
+
+cd ../..
+
+
+
 unzip ./ext/HumanML3D/HumanML3D/texts.zip -d ./ext/HumanML3D/HumanML3D/
 cp -r ext/HumanML3D/HumanML3D ext/mdm/dataset/HumanML3D
 rm -rf ext/HumanML3D
@@ -10,7 +17,7 @@ wget https://github.com/Asixa/RF-Genesis/releases/download/v1.0.0/RFGen_Dependen
 
 unzip RFGen_Dependencies.zip
 unzip RFGen_Dependencies/glove.zip -d ./ext/mdm/
-unzip RFGen_Dependencies/smpl.zip -d ./ext/mdm/body_models/pyt
+unzip RFGen_Dependencies/smpl.zip -d ./ext/mdm/body_models/
 unzip RFGen_Dependencies/t2m.zip -d ./ext/mdm/
 unzip RFGen_Dependencies/kit.zip -d ./ext/mdm/
 
