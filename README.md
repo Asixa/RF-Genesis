@@ -1,4 +1,4 @@
-# RF Genesis
+# RF Genesis V1.1 (2025 Updates!)
 ### [Project Page](https://rfgen.xingyuchen.me/) | [Paper](https://xingyuchen.me/files/Xingyu.Chen_SenSys23_RFGen.pdf) 
 
 The offical implementation of [  *RF Genesis: Zero-Shot Generalization of mmWave Sensing
