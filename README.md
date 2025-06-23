@@ -11,14 +11,29 @@ UC San Diego.
 
 In SenSys 2023
 ![teaser](https://rfgen.xingyuchen.me/RFGen/pull.png)
+
+
+## Updates 2025!
+Sorry for the long wait — the RFLoRA model is finally released! Feel free to try it out.
+
+Please note that RFLoRA was a workaround developed back in 2023, before 3D diffusion models became available. In 2025, I’ll be adding support for 3D diffusion models for indoor room generation.
+
+Also, I’ve noticed that some dependencies, including MDM and Mitsuba, have updated their APIs. I’ll start maintaining this project again while also preparing for RFGenV2!
+
+
+
 ## News
+📢 **June/25** - RFLoRA model released, trained under 20k images!
+
+📢 **June/25** - Experimental CUDA kernel for signal generation, reduce memory usage by 1000X!
+
 📢 **22/Jan/24** - Initial Release of RF Genesis!
 
 📢 **29/March/24** - Added the code for point-cloud processing and visualization.
 
 ## To-Do List
-- [ ] Release the RFLoRA pretrained model.
-- [ ] Release the RFLoRA training dataset and procedures.
+- [ ]  **New**  Replace Mitsuba with custom rayTracing engines.
+- [ ]  **New**  3D Diffusion including indoor environments.
 - [ ] More documentations.
 
 
@@ -50,6 +65,18 @@ Run a simple example.
 ```
 python run.py -o "a person walking back and forth" -e "a living room" -n "hello_rfgen"
 ```
+
+Optional Command:
+
+Skiping visualization rendering
+```
+--no-visualize 
+```
+Skiping environmental diffusion
+```
+--no-environment 
+```
+
 ## Visualization
 ![ezgif-7-eec8a9c9af](https://github.com/Asixa/RF-Genesis/assets/22312333/a53ef6d7-18b3-4f02-a82a-5bca3aaf08f8)
 

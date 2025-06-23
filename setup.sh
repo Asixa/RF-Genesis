@@ -21,6 +21,10 @@ unzip RFGen_Dependencies/smpl.zip -d ./ext/mdm/body_models/
 unzip RFGen_Dependencies/t2m.zip -d ./ext/mdm/
 unzip RFGen_Dependencies/kit.zip -d ./ext/mdm/
 
+wget https://github.com/Asixa/RF-Genesis/releases/download/v1.1.0/RFGen_RFLoRA.zip
+
+unzip RFGen_RFLoRA.zip -d ./models
+
 
 unzip RFGen_Dependencies/smpl_basicModel_v1.0.0.zip -d ./models/smpl_models
 unzip RFGen_Dependencies/smpl_ply.zip -d ./models/

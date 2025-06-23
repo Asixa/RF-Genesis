@@ -79,7 +79,7 @@ class RayTracer:
         velocity = np.zeros((self.PIR_resolution,self.PIR_resolution))  # the velocity is zero for this static frame, 
                                                                         # but will be calculated later by calculating the difference between two frames
         
-        PIR = np.stack([intensity,distance,velocity],axis=2)
+        PIR = np.stack([distance,intensity,velocity],axis=2)
         pointclouds = np.array(si.p)        # We save the points here for faster calculation, it can be calculated from the PIR's distance + sensor's intrinsic metrix
         return PIR, pointclouds
     
@@ -168,4 +168,5 @@ def trace(motion_filename):
         PIRs.append(torch.from_numpy(PIR).cuda())
         pointclouds.append(torch.from_numpy(pc).cuda())
 
+    # pointclouds = torch.stack(pointclouds, dim=0)
     return PIRs, pointclouds
