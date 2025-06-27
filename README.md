@@ -77,6 +77,30 @@ Skiping environmental diffusion
 --no-environment 
 ```
 
+## RFLoRA
+
+```
+from diffusers import StableDiffusionPipeline
+import torch
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load model
+pipe = StableDiffusionPipeline.from_pretrained("darkstorm2150/Protogen_x5.3_Official_Release",
+    torch_dtype=torch.float16,
+    safety_checker=None,
+).to("cuda")
+
+pipe.load_lora_weights("Asixa/RFLoRA")
+
+prompt = "a living room with a table, a chair, a TV, a computer, a lamp, a plant, a window, a door" 
+image = pipe(prompt, num_inference_steps=25).images[0]
+plt.imshow(image)
+```
+
+
+
+
 ## Visualization
 ![ezgif-7-eec8a9c9af](https://github.com/Asixa/RF-Genesis/assets/22312333/a53ef6d7-18b3-4f02-a82a-5bca3aaf08f8)
 

@@ -67,7 +67,7 @@ def main():
 
     if not skip_environment:
         print(colored('[RFGen] Step 3/4: Generating the environmental PIRs: ', 'green'))
-        envir_diff = environemnt_diff.EnvironmentDiffusion(lora_path="./models/RFLoRA")
+        envir_diff = environemnt_diff.EnvironmentDiffusion(lora_path="Asixa/RFLoRA")
         env_pir = envir_diff.generate(env_prompt)
     else:
         print(colored('[RFGen] Step 3/4: Skipping environment generation as requested.', 'yellow'))
