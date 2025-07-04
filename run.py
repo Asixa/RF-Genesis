@@ -62,8 +62,6 @@ def main():
     # print(colored('                  We will update tuned RFLoRA soon.', 'red'))
     # print(colored('                  RFGen will continue without RFLoRA.', 'green'))
 
-    envir_diff = environemnt_diff.EnvironmentDiffusion(lora_path="./models/RFLoRA")
-    env_pir = envir_diff.generate(env_prompt)
 
     if not skip_environment:
         print(colored('[RFGen] Step 3/4: Generating the environmental PIRs: ', 'green'))
