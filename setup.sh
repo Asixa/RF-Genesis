@@ -3,7 +3,7 @@ git clone https://github.com/GuyTevet/motion-diffusion-model.git ext/mdm
 git clone https://github.com/EricGuo5513/HumanML3D.git ext/HumanML3D
 
 cd ext/mdm
-git git checkout af061ca7c7077fb144c0094a5a72932b967647b6
+git checkout af061ca7c7077fb144c0094a5a72932b967647b6
 
 cd ../..
 
@@ -21,9 +21,9 @@ unzip RFGen_Dependencies/smpl.zip -d ./ext/mdm/body_models/
 unzip RFGen_Dependencies/t2m.zip -d ./ext/mdm/
 unzip RFGen_Dependencies/kit.zip -d ./ext/mdm/
 
-wget https://github.com/Asixa/RF-Genesis/releases/download/v1.1.0/RFGen_RFLoRA.zip
+wget https://github.com/Asixa/RF-Genesis/releases/download/v1.1.0/RFLoRA.zip
 
-unzip RFGen_RFLoRA.zip -d ./models
+unzip RFLoRA.zip -d ./models
 
 
 unzip RFGen_Dependencies/smpl_basicModel_v1.0.0.zip -d ./models/smpl_models
